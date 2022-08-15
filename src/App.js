@@ -3,6 +3,43 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { turtle1, turtle2, turtle3 } from "./assets/index";
 
+const Box = styled.div`
+  position: relative;
+  width: ${(props) => props.width}px;
+  height: ${(props) => props.height}px;
+  background: #eeeeee;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px rgb(186, 198, 189);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #000000;
+    transition: all 0.3s ease-in-out;
+  }
+`;
+const Turtle = styled.div`
+  position: absolute;
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
+  top: ${(props) => props.top}px;
+  right: ${(props) => props.right}px;
+  transform: rotate(${(props) => props.rotate}deg);
+`;
+const Div = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+`;
+const Title = styled.div`
+  color: #6a7570;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 70px;
+`;
+
 const TURTLE_SIZE = 200;
 const BOX_WIDTH = 600;
 const BOX_HEIGHT = 600;
@@ -98,8 +135,6 @@ function App() {
           setIndexTurtle((indexTurtle) => (indexTurtle = 0));
         }
       }, 200);
-    } else {
-      clearInterval(interval);
     }
     return () => {
       clearInterval(interval);
@@ -165,40 +200,3 @@ function App() {
 }
 
 export default App;
-
-const Box = styled.div`
-  position: relative;
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
-  background: #eeeeee;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 5px rgb(186, 198, 189);
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    background-color: #000000;
-    transition: all 0.3s ease-in-out;
-  }
-`;
-const Turtle = styled.div`
-  position: absolute;
-  width: ${(props) => props.size}px;
-  height: ${(props) => props.size}px;
-  top: ${(props) => props.top}px;
-  right: ${(props) => props.right}px;
-  transform: rotate(${(props) => props.rotate}deg);
-`;
-const Div = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-`;
-const Title = styled.div`
-  color: #6a7570;
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 70px;
-`;
