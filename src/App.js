@@ -144,11 +144,7 @@ function App() {
   return (
     <div className="App">
       <Div>
-        <Box
-          onClick={() => handleTriger()}
-          width={BOX_WIDTH}
-          height={BOX_HEIGHT}
-        >
+        <Box onClick={handleTriger} width={BOX_WIDTH} height={BOX_HEIGHT}>
           <Title>Turtles' paradise</Title>
           <Turtle size={TURTLE_SIZE} top={topA} right={rightA} rotate={-135}>
             <img
