@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.text {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: -190;
+}

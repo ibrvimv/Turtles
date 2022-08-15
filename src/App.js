@@ -33,7 +33,7 @@ function App() {
     setTriger(newBool);
   };
 
-  // A-----------------------
+  // Turtle A Moves -----------------------
   useEffect(() => {
     let shipId;
     if (topA < 800 && rightA < 800 && triger) {
@@ -51,7 +51,7 @@ function App() {
     };
   }, [topA, rightA, triger]);
 
-  // B-----------------------
+  // Turtle B Moves-----------------------
   useEffect(() => {
     let shipId;
     if (topB > -300 && triger) {
@@ -69,7 +69,7 @@ function App() {
     };
   }, [topB, rightB, triger]);
 
-  // C-----------------------
+  // Turtle C Moves-----------------------
   useEffect(() => {
     let shipId;
     if (topC < 1000 && topC > -300 && triger) {
@@ -87,7 +87,7 @@ function App() {
     };
   }, [topC, rightC, triger]);
 
-  // WAVES ---------------------
+  // TurtleMOVES ---------------------
   useEffect(() => {
     let interval = null;
     if (triger) {
@@ -159,6 +159,7 @@ function App() {
           </Turtle>
         </Box>
       </Div>
+      <div className="text">Click to any turtle or the box in the middle.</div>
     </div>
   );
 }
@@ -174,6 +175,7 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 5px rgb(186, 198, 189);
   transition: all 0.3s ease-in-out;
   &:hover {
     background-color: #000000;
@@ -200,4 +202,3 @@ const Title = styled.div`
   font-family: "Roboto Condensed", sans-serif;
   font-size: 70px;
 `;
-// #6A7570
